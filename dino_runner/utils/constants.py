@@ -73,3 +73,4 @@ DEFAULT_TYPE = "default"
 
 HEART_COUNT = 6
 SHIELD_TYPE = "shield"
+HAMMER_TYPE = "hammer"
