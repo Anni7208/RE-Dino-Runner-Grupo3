@@ -1,4 +1,3 @@
-import pygame
 from dino_runner.components.player_hearts.hearts import Heart
 from dino_runner.utils.constants import HEART_COUNT
 
