@@ -8,7 +8,7 @@ class ObstacleManager:
 
 
     def update(self, game):
-        if len(self.obstacles )== 0:
+        if len(self.obstacles) == 0:
             self.obstacles.append(Cactus(SMALL_CACTUS))
         
 

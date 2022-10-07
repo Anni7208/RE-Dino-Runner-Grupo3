@@ -60,19 +60,19 @@ class Dinosaur(Sprite):
             self.jump()
 
         if user_input[pygame.K_DOWN] and not self.dino_jump :
-            self.run = False
-            self.duck = True
-            self.jump = False
+            self.dino_run = False
+            self.dino_duck = True
+            self.dino_jump = False
 
         if user_input[pygame.K_UP] and self.dino_jump:
-            self.run = False
-            self.duck = False
-            self.jump = True
+            self.dino_run = False
+            self.dino_duck = False
+            self.dino_jump = True
 
         if not self.dino_jump:
-            self.run = True
-            self.duck = False
-            self.jump = False
+            self.dino_run = True
+            self.dino_duck = False
+            self.dino_jump = False
 
         if self.step_index >= 10:
             self.step_index = 0
@@ -118,7 +118,7 @@ class Dinosaur(Sprite):
     
     def check_invicibility(self,screen):
         if self.shield:
-            time_to_show = round((self.shield_time_up-pygame.time.get_ticks)/1000,2)
+            time_to_show = round((self.shield_time_up - pygame.time.get_ticks())/1000,2)
             print()
             if time_to_show >= 0:
                 if self.show_text:
@@ -131,6 +131,10 @@ class Dinosaur(Sprite):
                 else:
                     self.shield =   False
                     self.update_to_default(SHIELD_TYPE) 
+
+                print()
+
+
 
 
     def check_power(self,screen):

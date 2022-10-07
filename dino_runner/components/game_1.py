@@ -53,7 +53,7 @@ class Game:
         user_input = pygame.key.get_pressed()
         self.player.update(user_input)
         self.obstacle_manager.update(self)
-        self.power_up_manager(self.points, self.game_speed, self.player)
+        self.power_up_manager.update(self.points, self.game_speed, self.player)
         
     def draw(self):
         self.clock.tick(FPS)
@@ -61,6 +61,7 @@ class Game:
         self.draw_background()
         self.player.draw(self.screen)
         self.obstacle_manager.draw(self.screen)
+        self.power_up_manager.draw(self.screen)
         self.score()
         pygame.display.update()
         pygame.display.flip()
@@ -83,15 +84,24 @@ class Game:
         self.screen.blit(score, score_rect)
         self.player.check_invicibility(self.screen)
 
+# Cambios paara mostrar numero de muertes y un nuevo contador
+    #def update_death(self):
+        #self.death_count += 1
+        #if self.death_count > 0:
+         #   self.death_count()
+        
+    #def new_score(self):
+     #   if self.death_count > 0:
+      #     self.points += 1
+       # if self.points % 100 == 0:
+        #    self.game_speed += 20
 
     def show_menu(self):
         self.running = True
         white_color = (255, 255, 255)
         self.screen.fill(white_color)
         self.print_menu_elements(self.death_count)
-
-
-        pygame.display.update
+        pygame.display.update()        
         self.handle_key_events_on_menu()
 
 
