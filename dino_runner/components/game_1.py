@@ -39,7 +39,7 @@ class Game:
             self.events()
             self.updates()
             self.draw()
-        #pygame.quit()
+        pygame.quit()
 
 
     def events(self):
